@@ -32,7 +32,7 @@
             <p>Program FlightLab pozawala na zarządzanie plikami z zapisami przebiegu parametrów rejestrowanych na pokładzie różnych statków powietrznych. Dzięki narzędziu do dokładnej analizy, możesz tworzyć zestaw wykresów, a następnie analizować wybrane fragmenty lotu korzystając z interaktywnego kursora. Program umożliwia wczytanie dowolnej ilości zarówno parametrów analogowych, jak i dyskretnych.</p>
           </div>
           <figure>
-            <!-- <img src="../assets/podprogramanaliza.PNG" alt=""> -->
+            <!-- <img src="../assets/podprogramanaliza.jpg"> -->
           </figure>
         </section>
       </div>
@@ -141,6 +141,7 @@ export default {
 
     section {
       min-height: 80vh;
+      max-height: 80vh;
       width: 80vw;
       display: grid;
       grid-template-rows: 4fr 5fr;
@@ -148,12 +149,19 @@ export default {
       grid-template-areas: 
         "icon figure"
         "text figure";
-      row-gap: 10%;
-      column-gap: 5%;
+      row-gap: 5vh;
+      column-gap: 2vw;
 
       figure {
         grid-area: figure;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/podprogramanaliza.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
         // background: #222;
+
       }
 
       .icon {
@@ -182,9 +190,11 @@ export default {
         box-shadow:  34px 34px 61px #e0e0e0,
                     -34px -34px 61px #ffffff;
         p {
-          margin: 4rem;
+          margin: 2rem;
           font-size: 1.2rem;
           line-height: 1.5rem;
+          text-justify: inter-character;
+          text-align: left;
         }
       }
 
