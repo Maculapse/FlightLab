@@ -1,4 +1,4 @@
-# client
+# FlightLab landing page
 
 ## Project setup
 ```
