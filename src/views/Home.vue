@@ -1,11 +1,22 @@
 <template>
   <main>
-    <blockquote>
+    <!-- <blockquote>
       <p>Program do analizy i wizualizacji danych z 
         pokładowego rejestratora parametrów lotu oparty 
         na środowisku MATLAB.
       </p>
-    </blockquote>
+    </blockquote> -->
+    <section>
+      <div class="maintext">
+        <p>
+          Program do analizy i wizualizacji danych z 
+          pokładowego rejestratora parametrów lotu oparty 
+          na środowisku MATLAB.
+        </p> 
+        <img src="" alt="">
+      </div>
+      
+    </section>
   </main>
 </template>
 
@@ -31,10 +42,16 @@ export default {
     display: grid;
     place-items: center;
 
-    blockquote {
-      width: 20vw;
-      height: 10vh;
-      font-size: 2rem;
+    section {
+      width: 100%;
+      height: 50%;
+      margin: 100px;
+
+
+      .maintext {
+        display: flex;
+      }
+
     }
   }
 </style>
