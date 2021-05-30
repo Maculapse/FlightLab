@@ -1,11 +1,5 @@
 <template>
   <main>
-    <!-- <blockquote>
-      <p>Program do analizy i wizualizacji danych z 
-        pokładowego rejestratora parametrów lotu oparty 
-        na środowisku MATLAB.
-      </p>
-    </blockquote> -->
     <section>
       <div class="mainblock">
         <h2>
@@ -14,12 +8,10 @@
           na środowisku <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a>.
         </h2>
         <div class="more">
-          <router-link to="/program">Dowiedz się więcej...</router-link>
-          
+          <router-link to="/program">Dowiedz się więcej...</router-link>          
         </div>
         <img src="../assets/mainwindow.jpg" alt="">
-      </div>
-      
+      </div>     
     </section>
   </main>
 </template>
@@ -98,4 +90,70 @@ export default {
 
     }
   }
+
+@media only screen and (max-width: 1000px) {
+
+  main {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../assets/backgroundF16.png');
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: 70% 0%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    section {
+      width: 100%;
+      height: auto;
+      margin: 0;
+
+      .mainblock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: middle;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        // margin-top: 60px;
+        bottom: 1rem;
+
+
+        h2 {
+          margin: 1rem 2rem;
+          font-size: 1rem;
+        }
+        img {
+          width: 90%;
+          margin: auto;
+          height: auto;
+
+        }
+
+        a {
+          color: #EF5455;
+          text-decoration: none;
+          transition: .2s;
+          &:hover {
+            color: #FFF;
+            transition: .2s;
+          }
+        }
+
+        .more {
+          font-size: 1.1rem;
+          margin: 1rem;
+        }
+      }
+
+    }
+  }
+
+
+}
+
 </style>

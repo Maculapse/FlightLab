@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Program from '../views/Program.vue'
+import Contact from '../views/Contact.vue'
+import Author from '../views/Author.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +17,16 @@ const routes = [
     path: '/program',
     name: 'Program',
     component: Program
+  },
+  {
+    path: '/kontakt',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/autor',
+    name: 'Author',
+    component: Author
   },
   {
     path: '/about',

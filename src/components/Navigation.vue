@@ -3,13 +3,19 @@
     <router-link to="/">
       <img id="logo" src="../assets/FlightLab Logo.svg" alt="FlightLab">
     </router-link>
+    <div class="hamburger">
+
+    </div>
     <nav>
       <h2>
         <router-link to="/program">Program</router-link>
+      </h2>     
+      <h2>
+        <router-link to="/kontakt">Kontakt</router-link>
       </h2>
-      
-      <h2>Kontakt</h2>
-      <h2>Autor</h2>
+      <h2>
+        <router-link to="/autor">Autor</router-link>
+      </h2>
     </nav>
   </header>
 </template>
@@ -36,8 +42,6 @@ export default {
 header {
   display: flex;
   justify-content: space-between;
-  // background-color: #FFF;
-  // box-shadow: 0 0 5px 10px rgba(158, 158, 158, 0.274);
 
   img {
       margin: auto 20px;
@@ -83,6 +87,26 @@ header {
           }
     }
   }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  header {
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+
+    img {
+      height: 50px;
+      margin-top: 1rem;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+
 
 }
+
 </style>

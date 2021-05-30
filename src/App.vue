@@ -1,16 +1,51 @@
 <template>
   <div id="app">
-    <navigation class="navigation"></navigation>
+    <navigation :class="computedClass"></navigation>
+    <mobileNavigation class="mobileNavigation"></mobileNavigation>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation';
+import MobileNavigation from './components/Mobile-Navigation';
 
 export default {
+  data() {
+    return {
+      isMobile: false,
+      scrollPosition: null
+    }
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+      console.log(this.scrollPosition)
+    }
+  },
   components: {
-    navigation: Navigation
+    navigation: Navigation,
+    mobileNavigation: MobileNavigation
+  },
+  computed: {
+    computedClass() {
+      let className = 'top';
+        if (this.scrollPosition > 45) {
+          className = 'scroll';
+        }
+        console.log(className)
+      return className;
+    }
+  },
+  created() {
+    if (screen.width <= 1000) {
+      this.isMobile = true
+    } else {
+      this.isMobile = false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll)
   }
 }
 </script>
@@ -29,13 +64,25 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-}
-
-  .navigation {
+  .top {
     position: fixed;
     width: 100vw;
     z-index: 100;
+    transition: .5s;
   }
+
+  .scroll {
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+    background-color: #FFF;
+    transition: .5s;
+    -webkit-box-shadow: 0px 4px 14px -5px rgba(0,0,0,0.5); 
+    box-shadow: 0px 4px 14px -5px rgba(0,0,0,0.5);
+  }
+}
+
+
 
   a {
     text-decoration: none;
@@ -43,7 +90,14 @@ export default {
     // color: inherit;
   }
   .router-link-active {
-     color: #EF5455;
+    color: #EF5455;
   }
-
+  .mobileNavigation {
+    display: none;
+  }
+@media only screen and (max-width: 1000px) {
+  .mobileNavigation {
+    display: block;
+  }
+}
 </style>
